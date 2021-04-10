@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+     emacs:
+          build: 
+               context: emacs
+               dockerfile: Dockerfile
+               args: 
+                 ONAME: focal
+                 UNAME: docker
+          environment: 
+               - DISPLAY=$DISPLAY
+               - QT_X11_NO_MITSHM=1
+          hostname: sde
+          volumes:
+               - /tmp/.X11-unix:/tmp/.X11-unix:rw
+               - ${HOME}:/home/docker
