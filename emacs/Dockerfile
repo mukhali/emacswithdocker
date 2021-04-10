@@ -3,20 +3,12 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 ARG ONAME=focal
 
-RUN echo "\
-deb http://mirrors.ustc.edu.cn/ubuntu/ ${ONAME} main restricted universe multiverse\n\
-deb http://mirrors.ustc.edu.cn/ubuntu/ ${ONAME}-security main restricted universe multiverse\n\
-deb http://mirrors.ustc.edu.cn/ubuntu/ ${ONAME}-updates main restricted universe multiverse\n\
-deb http://mirrors.ustc.edu.cn/ubuntu/ ${ONAME}-backports main restricted universe multiverse\n\
-" > /etc/apt/sources.list;
-
 RUN apt-get update && \
     apt-get install -y \
             git \
             curl \
             gnupg \
             emacs \
-            wget \
     && rm -rf /var/lib/apt/lists/*
 
 ARG UNAME=docker
