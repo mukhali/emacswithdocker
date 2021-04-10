@@ -27,6 +27,7 @@ $ docker-compose exec -u docker emacs bash
 $ emacs
 ```
 ## GUI
+<img src="image/emacswithdocker.png" alt="logo" height="550" align="right" />
 
 
 
